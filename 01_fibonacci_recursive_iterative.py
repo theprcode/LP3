@@ -1,0 +1,28 @@
+# Aim: To write a Python program to calculate Fibonacci numbers
+# using recursive and non-recursive methods and analyse their
+# time and space complexity.
+
+def fibonacci_iterative(n):
+    a, b = 0, 1
+    for i in range(n):
+        print(a, end=" ")
+        a, b = b, a + b
+
+def fibonacci_recursive(n):
+    if n <= 1:
+        return n
+    return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
+
+n = int(input("Enter number of terms: "))
+
+print("Non-recursive Fibonacci:")
+fibonacci_iterative(n)
+
+print("\nRecursive Fibonacci:")
+for i in range(n):
+    print(fibonacci_recursive(i), end=" ")
+
+# Time Complexity:
+# Iterative: O(n), Recursive: O(2^n)
+# Space Complexity:
+# Iterative: O(1), Recursive: O(n)
